@@ -25,8 +25,9 @@ body {
 
     font-family: var(--ff-main);
     background-color: var(--clr-primary-pale-blue);
-    background-image: url("./images/pattern-background-desktop.svg")  no-repeat;
-    background-size: 100% auto;
+    background-image: url(./images/pattern-background-desktop.svg);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
 
     display: flex;
     align-items: center;
@@ -35,18 +36,13 @@ body {
 }
 
 .component {
-    margin: 1.5rem;
+    margin: 1.25rem;
     border-radius: var(--border-radius-component);
     background-color: var(--clr-neutral-very-pale-blue);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-.component .component__details .component__details-title {
-    font-weight: var(--fw-extra-bold);
-    font-size: 24px;
-    
+    max-width: 420px;
 }
 
 .component .component__details {
@@ -58,14 +54,99 @@ body {
     padding: 2rem;
 }
 
+.component .component__details .component__details-title {
+    font-weight: var(--fw-extra-bold);
+    font-size: 24px;
+}
+
+.component .component__details .component__details-description {
+    text-align: center;
+    color: var(--clr-neutral-desaturated-blue);
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.component .component__details .component__plan {
+    background-color: hsla(225, 100%, 94%, 45%);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.component .component__details .component__plan img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.component .component__details .component__plan-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.component .component__details .component__plan-group p:first-child {
+    font-weight: var(--fw-extra-bold);
+}
+
+.component .component__details .component__plan-group p:nth-child(2) {
+    color: var(--clr-neutral-desaturated-blue);
+    opacity: 0.75;
+}
+
+.component .component__details .component__plan .component__plan-change-btn  {
+    color: var(--clr-primary-bright-blue);
+    font-weight: var(--fw-bold);
+    text-decoration: underline;
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.component .component__details .component__plan .component__plan-change-btn:hover  {
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
 .component .component__details .component__button-payment, .component__button-cancel {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.component .component__details .component__button-payment:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.component .component__details .component__button-cancel:hover {
+    cursor: pointer;
+    color: var(--clr-neutral-dark-blue);
+}
+
+.component .component__details .component__button-payment {
+    background-color: var(--clr-primary-bright-blue);
+    color: var(--clr-neutral-very-pale-blue);
+    font-weight: var(--fw-bold);
+    box-shadow: 0 2.5rem 30px hsla(225, 100%, 94%, 45%);
+}
+
+.component .component__details .component__button-cancel {
+    background-color: var(--clr-neutral-very-pale-blue);
+    color: var(--clr-neutral-desaturated-blue);
+    font-weight: var(--fw-bold);
+    padding-bottom: 0;
 }
 
 @media (min-width: 375px) {
     body {
         background-image: url("./images/pattern-background-mobile.svg");
+        background-size: 100% 50%;
         background-repeat: no-repeat;
     }
 }
